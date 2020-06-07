@@ -1,0 +1,18 @@
+<mat-toolbar class="toolbar">
+  <button mat-raised-button class="menu-icon">
+    <mat-icon color="primary" aria-hidden="false" aria-label="Example home icon">menu</mat-icon>
+</button>
+<span class="title">TO-DO List Application</span>
+<span class="fill-remaining-space"></span>
+<button mat-button [matMenuTriggerFor]="menu" class="user-menu">
+  <mat-icon color="primary" aria-hidden="false" aria-label="Example home icon">account_circle</mat-icon>
+  <mat-panel-description class="username" #fontSize value="10px">{{username}}</mat-panel-description>
+  <mat-icon color="primary" aria-hidden="false" aria-label="Example home icon">keyboard_arrow_down</mat-icon>
+
+</button>
+
+<mat-menu #menu="matMenu">
+  <button mat-menu-item>Logout</button>
+</mat-menu>
+
+</mat-toolbar>

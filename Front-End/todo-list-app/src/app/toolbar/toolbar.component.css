@@ -1,0 +1,30 @@
+.toolbar {
+  background-color: white;
+}
+
+.menu-icon {
+  margin-right: 20px;
+  background: white;
+  border: 0px;
+  min-width: 40px;
+  padding: 0;
+}
+
+.title {
+  color: #673ab7;
+}
+
+.user-menu {
+  justify-content: flex-end;
+
+}
+
+.fill-remaining-space {
+  flex: 1 1 auto;
+}
+
+.username {
+  font-size: 16px;
+  font-weight: 300;
+  margin-left: 10px;
+}
