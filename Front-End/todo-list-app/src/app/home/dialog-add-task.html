@@ -8,6 +8,31 @@
     <mat-label>Description</mat-label>
     <input matInput>
   </mat-form-field>
+  <mat-form-field>
+    <mat-label>Choose Start Date</mat-label>
+    <input matInput type="datetime-local" placeholder="Start date">
+  </mat-form-field>
+  <mat-form-field style="margin-left: 50px;">
+    <mat-label>Choose End Date</mat-label>
+    <input matInput type="datetime-local" placeholder="End date">
+  </mat-form-field>
+  <mat-form-field>
+    <mat-label>Select Priority</mat-label>
+    <mat-select>
+      <mat-option value="option">Important</mat-option>
+      <mat-option value="option">Normal</mat-option>
+      <mat-option value="option">Low</mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field style="margin-left: 50px;">
+    <mat-label>Select Label</mat-label>
+    <mat-select>
+      <mat-option value="option">Home</mat-option>
+      <mat-option value="option">Office</mat-option>
+      <mat-option value="option">Market</mat-option>
+      <mat-option value="option">Other</mat-option>
+    </mat-select>
+  </mat-form-field>
 </div>
 <div mat-dialog-actions>
   <button mat-button (click)="onNoClick()">No Thanks</button>

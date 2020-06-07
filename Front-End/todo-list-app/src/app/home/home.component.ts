@@ -1,5 +1,6 @@
 import { Component, OnInit, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { TodoHttpService } from '../todo-httpService';
 
 export interface DialogData {
   animal: string;
@@ -15,8 +16,22 @@ export class HomeComponent implements OnInit {
 
   animal: string;
   name: string;
+  tomorrow: Date = new Date();
 
-  constructor(public dialog: MatDialog) {}
+  constructor(public dialog: MatDialog, private todoService: TodoHttpService) {}
+
+  ngOnInit() {
+    this.todoService.getAllTasks().subscribe(
+      data => {
+        console.log(data);
+        return;
+      },
+      error => {
+        console.log('Some error occured');
+        console.log(error.errorMessage);
+      }
+    );
+  }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogAddTask, {
@@ -29,12 +44,8 @@ export class HomeComponent implements OnInit {
       this.animal = result;
     });
   }
-
-
-  ngOnInit() {
-  }
-
 }
+
 @Component({
   selector: 'dialog-add-task',
   templateUrl: 'dialog-add-task.html',
